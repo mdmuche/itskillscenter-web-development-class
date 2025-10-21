@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+    <form action="/submit_form">
+        <label for="na">
+            Name:
+        </label>
+        <input type="text" placeholder="Enter your name" name="na" required>
+
+        <br>
+
+        <label>
+            Email:
+            <input type="email" name="em" placeholder="Enter your email" required>
+        </label>
+
+        <br>
+
+        <label>
+            <input type="password" name="pa" placeholder="Enter your password" required>
+        </label>
+
+        <br>
+        <label>
+            <input type="text" name="sch" value="Itskillscenter" readonly required>
+        </label>
+
+        <br>
+
+        <label for="com">Comments:</label>
+        <textarea name="cm" id="com" rows="4" cols="50"></textarea>
+
+        <br>
+
+        <select name="car" id="car">
+            <option value="" disabled selected>choose an option</option>
+            <option value="volvo">Volvo</option>
+            <option value="mercedes">Mercedes</option>
+            <option value="bentley">Bentley</option>
+            <option value="kia">Kia</option>
+            <option value="audi">Audi</option>
+            <option value="tesla">Tesla</option>
+        </select>
+
+        <br>
+
+        <label for="gender">Gender:</label>
+        Male:<input type="radio" name="gender" id="male">
+        Female:<input type="radio" name="gender" id="male">
+        Other:<input type="radio" name="gender" id="male">
+
+        <br>
+        <input type="submit" value="Register">
+        <input type="reset" value="Reset">
+        <input type="button" value="Next">
+        <input type="button" value="Previous">
+
+    </form>
+</body>
+</html>

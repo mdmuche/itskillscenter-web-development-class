@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./form-styles.css">
+</head>
+<body style="background-color: green; color: white; padding: 10px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+    <h1>Registration Form and User Table</h1>
+    <div style="background-color: green; color: white; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 10px;">
+        <section>
+
+        <form style="display: flex; flex-direction: column; gap: 2px; width: 400px;" 
+        >
+            <h2 style="align-self: center;">Registration Form</h2>
+        <input style="padding: 5px; border: none; border-radius: 2px;" type="text" name="na" placeholder="Joe Doe">
+        <br>
+        <label for="gender">Gender:</label>
+        <div>
+            Male<input style="padding: 5px; border: none; border-radius: 2px;" type="radio" name="gender" id="gender">
+        </div>
+        <div>
+            Female<input style="padding: 5px; border: none; border-radius: 2px;" type="radio" name="gender" id="gender">
+        </div>
+        <div style="display: flex; flex-direction: row; gap: 10px;">
+            Other<input style="padding: 5px; border: none; border-radius: 2px;" type="radio" name="gender" id="gender">
+        </div>
+        <br>
+        <label for="sk">Select all that apply:</label>
+        <div style="display: flex; flex-direction: row; gap: 10px;">
+            <input style="padding: 5px; border: none; border-radius: 2px;" type="checkbox" name="html" id="sk">Mathematics
+        </div>
+        <div style="display: flex; flex-direction: row; gap: 10px;">
+            <input style="padding: 5px; border: none; border-radius: 2px;" type="checkbox" name="css" id="sk">English
+        </div>
+        <div style="display: flex; flex-direction: row; gap: 10px;">
+            <input style="padding: 5px; border: none; border-radius: 2px;" type="checkbox" name="js" id="sk">Biology
+        </div>
+        <div style="display: flex; flex-direction: row; gap: 10px;">
+            <input style="padding: 5px; border: none; border-radius: 2px;" type="checkbox" name="ui" id="sk">Chemistry
+        </div>
+        <div style="display: flex; flex-direction: row; gap: 10px;">
+            <input style="padding: 5px; border: none; border-radius: 2px;" type="checkbox" name="cy" id="sk">Arts
+        </div>
+        <div style="display: flex; flex-direction: row; gap: 10px;">
+            <input style="padding: 5px; border: none; border-radius: 2px;" type="checkbox" name="pm" id="sk">Literature
+        </div>
+        <br>
+        <label for="favcolor">Select your favorite color</label>
+        <input style="padding: 5px; border: none; border-radius: 2px;" type="color" name="favcolor" id="favcolor" value="#000000">
+        <br>
+        <label for="dob">Date of Birth</label>
+        <input style="padding: 5px; border: none; border-radius: 2px;" type="date" name="dob" id="dob">
+        <br>
+        <label for="birthdaytime">Birthday (date and time):</label>
+        <input style="padding: 5px; border: none; border-radius: 2px;" type="datetime-local" name="birthdaytime" id="birthdaytime">
+        <br>
+        <label for="email">Email:</label>
+        <input style="padding: 5px; border: none; border-radius: 2px;" type="email" name="email" id="email">
+        <br>
+        <label for="pic">Profile Picture:</label>
+        <input style="padding: 5px; border: none; border-radius: 2px;" type="file" name="pic" id="pic">
+        <br>
+        <input style="padding: 5px; border: none; border-radius: 2px;" type="hidden" name="userId" id="userId" value="ITS001">
+        <br>
+        <input style="padding: 5px; border: none; border-radius: 18px;" type="image" src="./img/gettyimages-7.jpg" alt="a desc path">
+        <br>
+        <label for="">Current month:</label>
+        <input style="padding: 5px; border: none; border-radius: 2px;" type="month" name="month" id="month">
+        <br>
+        <label for="test">Test:</label>
+        <input style="padding: 5px; border: none; border-radius: 2px;" type="number" name="test" id="test" min="0" max="30">
+        <label for="exam">Exam:</label>
+        <input style="padding: 5px; border: none; border-radius: 2px;" type="number" name="exam" id="exam" min="0" max="70">
+        <label for="exam">Score:</label>
+        <input style="padding: 5px; border: none; border-radius: 2px;" type="number" name="score" id="score" min="0" max="100">
+        <br>
+        <label for="pa">Password:</label>
+        <input style="padding: 5px; border: none; border-radius: 2px;" type="password" name="pa" id="pa">
+        <br>
+        <label for="points">Points (between 0 and 10):</label>
+        <input style="padding: 5px; border: none; border-radius: 2px;" type="range" name="points" id="points" min="0" max="10">
+        <br>
+        <label for="tsearch">Search Twitter</label>
+        <input style="padding: 5px; border: none; border-radius: 2px;" type="search" name="tsearch" id="tsearch">
+        <br>
+        <label for="phone">Phone Number:</label>
+        <input style="padding: 5px; border: none; border-radius: 2px;" type="text" name="phone" id="phone">
+        <br>
+        <label for="regt">Registration Time:</label>
+        <input style="padding: 5px; border: none; border-radius: 2px;" type="time" name="regt" id="regt">
+        <br>
+        <label for="social">Social:</label>
+        <input style="padding: 5px; border: none; border-radius: 2px;" type="url" name="socila" id="social">
+        <br>
+        <label for="week">Submission Week:</label>
+        <input style="padding: 5px; border: none; border-radius: 2px;" type="week" name="week" id="week" min="0" max="52">
+        <br>
+        <br>
+        <input style="padding: 5px; border: none; border-radius: 2px; background-color: beige; color: black; width: 200px; align-self: center;" type="submit" value="Register">
+        <input style="padding: 5px; border: none; border-radius: 2px; background-color: beige; color: black; width: 200px; align-self: center;" type="reset" value="Reset">
+        </form>
+        </section>
+
+        <section>
+          <table width="100%" border="5" cellspacing="2" cellpadding="1">
+            <caption style="align-self: center; font-size: bolder; font-size: 20px;">User Table</caption>
+            <tr>
+                <th>S/N</th>
+                <th>NAME</th>
+                <th>EMAIL</th>
+                <th>PROFILE PIC</th>
+                <th>PASSWORD</th>
+                <th>GENDER</th>
+                <th colspan="3">SKILLS</th>
+                <th>COLOR</th>
+                <th>DOB</th>
+                <th>STATE</th>
+                <th>DATE AND TIME</th>
+                <th>CURRENT MONTH</th>
+                <th>TEST</th>
+                <th>EXAM</th>
+                <th>SCORE</th>
+                <th>POINTS</th>
+                <th>TWITTER SEARCH</th>
+                <th>Phone Number</th>
+                <th>Register Time</th>
+                <th>Social</th>
+            </tr>
+            <tr align="center">
+                <td>1</td>
+                <td>John Doe</td>
+                <td>johndoe@example.com</td>
+                <td>https://profile-pic.jpg</td>
+                <td>Test@1234</td>
+                <td>Male</td>
+                <td>Mathematics</td>
+                <td>English</td>
+                <td>Biology</td>
+                <td>#000000</td>
+                <td>12/09/2010</td>
+                <th>Anambra</th>
+                <td>12/09/2010 5:30</td>
+                <td>October</td>
+                <td>20</td>
+                <td>50</td>
+                <td>70</td>
+                <td>7</td>
+                <td>explore</td>
+                <td>+2348128756456</td>
+                <td>10:30</td>
+                <td>https://x.com/joe</td>
+            </tr>
+            <tr align="center">
+                <td>2</td>
+                <td>Joe Doe</td>
+                <td>joedoe@example.com</td>
+                <td>https://profile-pic.jpg</td>
+                <td>Test@1234</td>
+                <td>Male</td>
+                <td>Mathematics</td>
+                <td>English</td>
+                <td>Physics</td>
+                <td>#000000</td>
+                <td>15/05/2012</td>
+                <th>Akwa Ibom</th>
+                <td>15/05/2012 1:50</td>
+                <td>July</td>
+                <td>25</td>
+                <td>60</td>
+                <td>85</td>
+                <td>8.5</td>
+                <td>explore</td>
+                <td>+2348124556456</td>
+                <td>11:25</td>
+                <td>https://x.com/joe</td>
+            </tr>
+            <tr align="center">
+                <td>3</td>
+                <td>James Doe</td>
+                <td>jamesdoe@example.com</td>
+                <td>https://profile-pic.jpg</td>
+                <td>Test@1234</td>
+                <td>Male</td>
+                <td>English</td>
+                <td>Arts</td>
+                <td>Literature</td>
+                <td>#000000</td>
+                <td>19/03/2010</td>
+                <th>Ekiti</th>
+                <td>19/03/2010 2:30</td>
+                <td>October</td>
+                <td>20</td>
+                <td>50</td>
+                <td>70</td>
+                <td>7</td>
+                <td>explore</td>
+                <td>+2348111756456</td>
+                <td>10:50</td>
+                <td>https://x.com/james</td>
+            </tr>
+            <tr align="center">
+                <td>4</td>
+                <td>Gbemi Seun</td>
+                <td>gbemiseun@example.com</td>
+                <td>https://profile-pic.jpg</td>
+                <td>Test@1234</td>
+                <td>Female</td>
+                <td>Mathematics</td>
+                <td>English</td>
+                <td>Biology</td>
+                <td>#000000</td>
+                <td>08/05/2011</td>
+                <th>Ekiti</th>
+                <td>08/05/2011 5:00</td>
+                <td>November</td>
+                <td>13</td>
+                <td>49</td>
+                <td>62</td>
+                <td>6.2</td>
+                <td>explore</td>
+                <td>+234819856456</td>
+                <td>8:05</td>
+                <td>https://x.com/gbemi</td>
+            </tr>
+            <tr align="center">
+                <td>5</td>
+                <td>Akintola Ji</td>
+                <td>akintola@example.com</td>
+                <td>https://profile-pic.jpg</td>
+                <td>Test@1234</td>
+                <td>Female</td>
+                <td>English</td>
+                <td>Literature</td>
+                <td>Arts</td>
+                <td>#000000</td>
+                <td>11/12/2011</td>
+                <th>Anambra</th>
+                <td>11/12/2011 2:23</td>
+                <td>November</td>
+                <td>20</td>
+                <td>50</td>
+                <td>70</td>
+                <td>7</td>
+                <td>explore</td>
+                <td>+2348128798456</td>
+                <td>12:09</td>
+                <td>https://x.com/akin</td>
+            </tr>
+            <tr align="center">
+                <td>6</td>
+                <td>Bright Asue</td>
+                <td>asuebright@example.com</td>
+                <td>https://profile-pic.jpg</td>
+                <td>Test@1234</td>
+                <td>Male</td>
+                <td>Mathematics</td>
+                <td>English</td>
+                <td>Chemistry</td>
+                <td>#000000</td>
+                <td>21/02/2009</td>
+                <th>Anambra</th>
+                <td>21/02/2009 11:45</td>
+                <td>April</td>
+                <td>30</td>
+                <td>65</td>
+                <td>95</td>
+                <td>9.5</td>
+                <td>explore</td>
+                <td>+2340908756456</td>
+                <td>10:15</td>
+                <td>https://x.com/asue</td>
+            </tr>
+            <tr align="center">
+                <td>7</td>
+                <td>Favour Adi</td>
+                <td>favouradi@example.com</td>
+                <td>https://profile-pic.jpg</td>
+                <td>Test@1234</td>
+                <td>Female</td>
+                <td>Mathematics</td>
+                <td>English</td>
+                <td>Biology</td>
+                <td>#000000</td>
+                <td>08/07/2010</td>
+                <th>Anambra</th>
+                <td>08/07/2010 1:40</td>
+                <td>February</td>
+                <td>10</td>
+                <td>40</td>
+                <td>50</td>
+                <td>5</td>
+                <td>explore</td>
+                <td>+2348187756456</td>
+                <td>10:30</td>
+                <td>https://x.com/favour</td>
+            </tr>
+            <tr align="center">
+                <td>8</td>
+                <td>Joy Abel</td>
+                <td>joyabel@example.com</td>
+                <td>https://profile-pic.jpg</td>
+                <td>Test@1234</td>
+                <td>Female</td>
+                <td>Mathematics</td>
+                <td>English</td>
+                <td>Chemistry</td>
+                <td>#000000</td>
+                <td>11/03/2010</td>
+                <th>Anambra</th>
+                <td>11/03/2010 3:59</td>
+                <td>April</td>
+                <td>30</td>
+                <td>50</td>
+                <td>80</td>
+                <td>8</td>
+                <td>explore</td>
+                <td>+2348128733356</td>
+                <td>10:30</td>
+                <td>https://x.com/joy</td>
+            </tr>
+            <tr align="center">
+                <td>9</td>
+                <td>Justin Babel</td>
+                <td>justinbabel@example.com</td>
+                <td>https://profile-pic.jpg</td>
+                <td>Test@1234</td>
+                <td>Male</td>
+                <td>Literature</td>
+                <td>Arts</td>
+                <td>English</td>
+                <td>#000000</td>
+                <td>12/09/2010</td>
+                <th>Anambra</th>
+                <td>12/09/2010 4:30</td>
+                <td>October</td>
+                <td>20</td>
+                <td>50</td>
+                <td>70</td>
+                <td>7</td>
+                <td>explore</td>
+                <td>+2342438756456</td>
+                <td>10:30</td>
+                <td>https://x.com/justin</td>
+            </tr>
+            <tr align="center">
+                <td>10</td>
+                <td>Briggs Snapp</td>
+                <td>snapps@example.com</td>
+                <td>https://profile-pic.jpg</td>
+                <td>Test@1234</td>
+                <td>Male</td>
+                <td>English</td>
+                <td>Arts</td>
+                <td>Literature</td>
+                <td>#000000</td>
+                <td>14/05/2013</td>
+                <th>Anambra</th>
+                <td>14/05/2013 9:49</td>
+                <td>Dec</td>
+                <td>20</td>
+                <td>43</td>
+                <td>63</td>
+                <td>6.3</td>
+                <td>explore</td>
+                <td>+2348128753456</td>
+                <td>10:30</td>
+                <td>https://x.com/briggs</td>
+            </tr>
+          </table>
+        </section>
+    </div>
+    
+</body>
+</html>
