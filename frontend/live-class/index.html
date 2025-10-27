@@ -4,12 +4,14 @@
     <head>
       <meta charset="UTF-8" >
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="./index.css">
       <title>Document</title>
     </head>
 
     <body>
          <!-- Basic HTML tags -->
          <h1>ITSKILLSCENTER</h1>
+         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus voluptatibus nesciunt sit!</p>
          <a href="./src/resume.html">resume</a>
          <br>
          <a href="./src/contact-us.html">Contact Us</a>
@@ -24,10 +26,10 @@
          <br>
          <a href="./src/table.html">Student Table</a>
          <br>
-         <img src="./img/gettyimages-8.jpg" alt="white girl and black guy" width="100px" height="100px">
+         <img src="./assets/img/gettyimages-8.jpg" alt="white girl and black guy" width="100px" height="100px">
 
-         <ul type="square">
-          <h3>This is a list fruits:</h3>
+         <ul type="square" class="list">
+          <h3 class="list-heading">This is a list fruits:</h3>
           <li>Apple</li>
           <li>Plum</li>
           <li>Banana</li>
@@ -37,8 +39,8 @@
          </ul>
 
          <!-- List of October cohort Class -->
-         <ol type="i">
-          <h3>Class List:</h3>
+         <ol type="i" class="list">
+          <h3 class="list-heading">Class List:</h3>
           <li>Martins</li>
           <li>Timilehin</li>
           <li>Gabriel</li>
@@ -46,7 +48,30 @@
           <li>Maazi Chibuike</li>
           <li>Fortune</li>
          </ol>
+
+         <div class="box">Emmanuel</div>
+         <div class="box circle">Esther</div>
+         <div class="box circle">Israel</div>
+         <div class="box">Ngozi</div>
+
+         <!-- this is wrong you should only use one id specific to an element ❌ -->
+         <div id="special">Special 1</div>
+         <div id="special">Special 2</div>
          <!-- End of List -->
+          <!-- <style>
+            a {
+              color: white;
+            }
+
+            h1 {
+              color: burlywood;
+              background-color: aqua;
+            }
+
+            p {
+              color: orangered;
+            }
+          </style> -->
     </body>
 
 </html>

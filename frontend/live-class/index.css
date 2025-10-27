@@ -1,0 +1,50 @@
+body {
+    background-color: beige; 
+    color: black;
+}
+
+a {
+    color: black;
+}
+
+h1 {
+  color: burlywood;
+  background-color: aqua;
+}
+
+p {
+  color: orangered;
+}
+
+.list-heading {
+    color: magenta;
+}
+
+.list {
+    padding: 20px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.box {
+    width: 200px;
+    height: 200px;
+    background-color: goldenrod;
+    margin: 20px;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.circle {
+    background-color: magenta;
+    border-radius: 50%;
+}
+
+#special {
+    color: whitesmoke;
+    width: 200px;
+    height: 200px;
+    background-color: midnightblue;
+    padding: 20px;
+    text-align: center;
+    border-radius: 50%;
+}
