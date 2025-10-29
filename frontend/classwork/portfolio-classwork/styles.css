@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single:wght@100..900&family=Geist:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+/* Reset margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set background color and font style */
+body {
+    font-family: "Bitcount Grid Single", system-ui, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Center-align the header */
+header {
+    text-align: center;
+}
+
+/* Style for the main title */
+h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+}
+
+/* Style the subheading */
+header p {
+    font-size: 1.2rem;
+    color: #7f8c8d;
+}
+
+#about {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #ecf0f1;
+    border-radius: 5px;
+}
+
+#about h2 {
+    color: #34495e;
+}
+
+#projects {
+    margin-bottom: 20px;
+}
+
+.project {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 10px
+
+}
+
+.project h3 {
+    color: #2980b9;
+    margin-bottom: 5px;
+}
+
+#contact {
+    background-color: #ecf0f1;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#contact a {
+    color: #2980b9;
+    text-decoration: none;
+}
+
+#contact a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    color: #7f8c8d;
+}

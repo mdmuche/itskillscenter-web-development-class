@@ -1,4 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+* {
+    border: 1px solid green;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
+    font-family: 'Geist', 'sans-serif';
+    font-weight: 500;
     background-color: beige; 
     color: black;
 }
@@ -47,4 +57,35 @@ p {
     padding: 20px;
     text-align: center;
     border-radius: 50%;
+}
+
+/* attribute selector */
+ol[type="i"] {
+    color: mediumseagreen;
+    background-color: red;
+}
+
+img[src="./assets/img/gettyimages-8.jpg"]{
+    border-radius: 50%;
+}
+
+/* Descendant selector */
+ul h3 {
+    color: goldenrod !important;
+}
+
+/* pseudoclass selector */
+ul li:hover, ol li:hover {
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    width: fit-content;
+    border-radius: 8px;
+}
+
+a:hover {
+    color: maroon;
+}
+
+ol li:nth-child(even) {
+    color: aqua !important;
 }
