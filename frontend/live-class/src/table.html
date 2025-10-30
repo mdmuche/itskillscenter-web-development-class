@@ -36,6 +36,13 @@
         <td>85</td>
       </tr>
     </table>
+    <div id="cali">callistus</div>
+    <div id="flex-container">
+      <div class="flex-item">Item 1</div>
+      <div class="flex-item">Item 2</div>
+      <div class="flex-item">Item 3</div>
+      <div class="flex-item">Item 4</div>
+    </div>
     <style>
       tr:nth-child(even) {
         background-color: rgba(0, 0, 255, 0.5);
@@ -57,6 +64,28 @@
 
       table {
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      }
+
+      #cali {
+        /* border: 2px solid red; */
+        border-width: 10px;
+        border-style: ridge; /* values: dotted, solid, dashed, inset, outset, ridge, etc */
+        border-color: red;
+        width: fit-content;
+        margin: 10px auto;
+        text-align: center;
+        padding: 200px 50px;
+        margin-right: 200px;
+
+      }
+      /* top right bottom left(padding: 10px 20px 30px 40px) */
+      /* top left&right bottom(padding: 10px 20px 30px) */
+      /* top&bottom left&right(padding: 10px 20px) */
+      /* top&right&bottom&left[trbl](padding: 10px) */
+
+      #flex-container {
+         display: inline-flex;
+         
       }
     </style>
 </body>
