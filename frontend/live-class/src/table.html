@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Table</title>
-</head>
-<body>
+  </head>
+  <body>
     <table width="500" border="4" cellspacing="0" cellpadding="5">
       <tr>
         <th>S/N</th>
@@ -43,7 +43,16 @@
       <div class="flex-item">Item 3</div>
       <div class="flex-item">Item 4</div>
     </div>
+    <div class="flex-box-transition">
+      <div class="box-transition">kxkx</div>
+    </div>
+    <div style="border: 10px solid red" class="error">error</div>
     <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
       tr:nth-child(even) {
         background-color: rgba(0, 0, 255, 0.5);
         color: white;
@@ -52,18 +61,17 @@
 
       table {
         background-color: magenta;
-
       }
 
       body {
-         /* background-image: url(../assets/img/gettyimages-2.jpg);
-        background-size: cover;
-        background-repeat: no-repeat; */
-      /* background-position: center; */
+        /* background-image: url(../assets/img/gettyimages-2.jpg);
+              background-size: cover;
+              background-repeat: no-repeat; */
+        /* background-position: center; */
       }
 
       table {
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
       }
 
       #cali {
@@ -76,7 +84,6 @@
         text-align: center;
         padding: 200px 50px;
         margin-right: 200px;
-
       }
       /* top right bottom left(padding: 10px 20px 30px 40px) */
       /* top left&right bottom(padding: 10px 20px 30px) */
@@ -84,9 +91,40 @@
       /* top&right&bottom&left[trbl](padding: 10px) */
 
       #flex-container {
-         display: inline-flex;
-         
+        display: inline-flex;
+      }
+      .flex-box-transition {
+        padding: 50px 0;
+        border: 1px solid red;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      @keyframes circularmotion {
+        0% {
+          rotate: 0deg;
+        }
+        100% {
+          rotate: 360deg;
+        }
+      }
+      .box-transition {
+        padding: 100px;
+        border: 10px solid red;
+        background-color: tomato;
+        border-radius: 50%;
+        opacity: 1;
+        /* transition: transform 0.4s ease, opacity 0.4s ease; */
+        animation: circularmotion 1s linear infinite backwards;
+        /* animation: name duration timing-function delay iteration-count; */
+      }
+      .box-transition:hover {
+        border-radius: 18px;
+        animation: none;
+        background-color: magenta;
+        transform: translate(130px, 0px);
+        opacity: 0.5;
       }
     </style>
-</body>
+  </body>
 </html>
