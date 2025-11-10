@@ -6,9 +6,9 @@ This is a Fullstack Development class with Itskillscenter for a period of 7 mont
 ## Core Learning Technologies
 - HTML ✅
 - Git ✅
-- CSS - In Progress
+- CSS - ✅
+- Tailwind CSS - in Progress
 - JavaScript
-- Tailwind CSS
 - React
 - NodeJS
 - Express
