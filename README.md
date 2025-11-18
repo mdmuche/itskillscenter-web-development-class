@@ -7,8 +7,8 @@ This is a Fullstack Development class with Itskillscenter for a period of 7 mont
 - HTML ✅
 - Git ✅
 - CSS - ✅
-- Tailwind CSS - in Progress
-- JavaScript
+- Tailwind CSS - ✅
+- JavaScript - in progress...
 - React
 - NodeJS
 - Express

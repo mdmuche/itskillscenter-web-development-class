@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./dist/output.css">
+    <title>Login Form</title>
+</head>
+ <body class="bg-[rgb(224,227,229)]">
+    <div class="relative max-w-sm h-[400px] bg-white mx-auto my-20 rounded-xl">
+      <div
+        class="absolute -top-5 left-5 w-[90%] bg-linear-to-tr from-gray-900 to-gray-800 shadow-2xl text-white text-center h-28 rounded-xl flex justify-center items-center"
+      >
+        <h1 class="text-3xl font-semibold">Sign In</h1>
+      </div>
+
+      <div class="w-full">
+        <form class="absolute text-center top-30 left-5 flex flex-col gap-5">
+          <input
+            type="text"
+            placeholder="Email"
+            class="border border-gray-300 w-[340px] px-3 py-2 rounded-lg placeholder:text-sm"
+          />
+
+          <input
+            type="text"
+            placeholder="Password"
+            class="border border-gray-300 w-[340px] px-3 py-2 rounded-lg placeholder:text-sm"
+          />
+
+          <div class="flex gap-2 items-center">
+            <div class="rounded-full px-3 py-1.5 active:bg-black/10">
+              <input
+                type="checkbox"
+                class="accent-gray-900 scale-125 cursor-pointer"
+              />
+            </div>
+            <p class="text-gray-400">Remember Me</p>
+          </div>
+
+          <button
+            class="w-full bg-linear-to-tr from-gray-900 to-gray-800 text-white uppercase p-2 rounded-lg text-sm cursor-pointer hover:shadow-xl transition duration-300 ease-in"
+          >
+            sign in
+          </button>
+          <p class="text-sm text-gray-400">
+            Don't have an account?
+            <span
+              ><a href="#" class="text-gray-900 font-bold hover:underline"
+                >Sign up</a
+              ></span
+            >
+          </p>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
