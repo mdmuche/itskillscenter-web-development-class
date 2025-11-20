@@ -89,9 +89,9 @@ const bigint = 1234567890123456789012345678901234567890n
 
 // console.log(typeof alert)
 const _name = "abula martins onyemuche".toUpperCase();
-alert(`hello ${1}`);
-alert(`hello ${"_name"}`);
-alert(`hello ${_name}`);
+// alert(`hello ${1}`);
+// alert(`hello ${"_name"}`);
+// alert(`hello ${_name}`);
 
 let b = BigInt("0b1010101001010101001111111111111111");
 // console.log(b);
@@ -153,4 +153,16 @@ class Person {
 
 //? this is correct way
 const person = new Person("itskillscenter", "harmony ogba", "abula martins onyemuche", 29, false);
-console.log(person);
+// console.log(person);
+
+let greeting = 'hello';
+greeting += '!';
+// console.log(greeting);
+
+// const _age = prompt('how old are you');
+// let status = _age > 18 ? alert('Adult') : alert('Minor');
+
+// console.log(typeof(Object) === typeof(Array));
+// console.log(false && false);
+// console.log(false || false);
+// console.log('2' + false);
