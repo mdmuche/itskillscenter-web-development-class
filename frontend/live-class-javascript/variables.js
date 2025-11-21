@@ -166,3 +166,15 @@ greeting += '!';
 // console.log(false && false);
 // console.log(false || false);
 // console.log('2' + false);
+const currentDatee = new Date()
+// console.log(currentDatee.getMonth() + 1);
+// console.log(currentDatee.getFullYear());
+// console.log(currentDatee.getDay());
+const accBal = Math.floor((Math.random() * (90000 - 5000 + 1)) + 500);
+const now = Date.now();
+const date = new Date(now);
+const dateTime = date.toTimeString().split('+')[0];
+// console.log(date);
+const firstName = 'Martins';
+const message = `Welcome ${firstName} your account balance is #${accBal} as at ${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()} ${dateTime}`;
+console.log(message);
