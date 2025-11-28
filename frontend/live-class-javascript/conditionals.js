@@ -77,18 +77,25 @@ if(agbero > 76 && agbero <= 120){
 // }
 
 //? switch case
-let age = Number(prompt('your age', 0));
-switch(age) {
-    case 18:
-        console.log(`Welcome to page of ${age}`);
-        break;
-    case 30:
-        console.log(`you are ${age} years old. welcome to your page`);
-        break;
-    case 60:
-        console.log(`you are ${age} years old. welcome to your page!`);
-        break;
-    default:
-        console.log(`you are not among the age bracket`);
-        break;
+// let age = Number(prompt('your age', 0));
+// switch(age) {
+//     case 18:
+//         console.log(`Welcome to page of ${age}`);
+//         break;
+//     case 30:
+//         console.log(`you are ${age} years old. welcome to your page`);
+//         break;
+//     case 60:
+//         console.log(`you are ${age} years old. welcome to your page!`);
+//         break;
+//     default:
+//         console.log(`you are not among the age bracket`);
+//         break;
+// }
+
+const value = -200;
+if(value) {
+    console.log('truthy');
+} else {
+    console.log('falsy');
 }

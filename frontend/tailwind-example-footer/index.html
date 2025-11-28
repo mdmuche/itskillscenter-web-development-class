@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="footer-container">
+        <div class="f-section"></div>
+        <div class="f-section"></div>
+        <div class="f-section"></div>
+        <div class="f-section"></div>
+        <div class="f-section"></div>
+    </div>
+
+    <style>
+        #footer-container {
+            width: 90%;
+            border: 2px solid red;
+            height: 400px;
+            margin: 100px auto 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .f-section {
+            width: 17%;
+            height: 398px;
+            border: 1px solid green;
+        }
+
+        @media(max-width: 680px) {
+            #footer-container {
+            width: 80%;
+            gap: 30px;
+            height: auto;
+        }
+
+        .f-section {
+            width: 45%;
+            height: 700px;
+        }
+        }
+    </style>
+</body>
+</html>
