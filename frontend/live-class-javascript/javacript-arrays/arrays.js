@@ -67,3 +67,48 @@ let matrix = [
     [7, 8, 9]
 ];
 // console.log(matrix[1][2]); // output 6
+
+const animals = ['cats', 'dog', 'elephant'];
+let aniLen = animals.length;
+
+let text = '<ul>';
+
+for(let i = 0; i <aniLen; i++) {
+    text += '\n' + '<li>' + animals[i] + '</li>';
+}
+text+= '\n' + '</ul>';
+
+// console.log(text);
+animals[animals.length] = 'lion';
+// console.log('used length to add: ', animals)
+
+const arrTypeOf = ['1', '2', '3', '4', '5'];
+const user = {
+    name: 'Abula',
+    isMarried: false,
+}
+//? different ways to check the typeof whether the data structure used here is an array or an object is when you use the typeOf operator it returns an array as an object type
+// console.log(Array.isArray(arrTypeOf));
+// console.log(arrTypeOf instanceof Array);
+// console.log(user instanceof Array);
+// console.log(user instanceof Object);
+
+const myObj = {
+  name: "John",
+  age: 30,
+  cars: [
+    {name:"Ford", models:["Fiesta", "Focus", "Mustang"]},
+    {name:"BMW", models:["320", "X3", "X5"]},
+    {name:"Fiat", models:["500", "Panda"]}
+  ]
+}
+
+let x = '';
+for(const car in myObj.cars) {
+   x += '\n' + '<h1>' + myObj.cars[car].name + '</h1>' + '\n';
+   for(const model in myObj.cars) {
+    x += myObj.cars[model].models.join(' ');
+   }
+}
+
+console.log(x);
