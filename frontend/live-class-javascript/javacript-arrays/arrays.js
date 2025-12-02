@@ -78,7 +78,7 @@ for(let i = 0; i <aniLen; i++) {
 }
 text+= '\n' + '</ul>';
 
-// console.log(text);
+console.log(text);
 animals[animals.length] = 'lion';
 // console.log('used length to add: ', animals)
 
@@ -111,4 +111,4 @@ for(const car in myObj.cars) {
    }
 }
 
-console.log(x);
+// console.log(x);
