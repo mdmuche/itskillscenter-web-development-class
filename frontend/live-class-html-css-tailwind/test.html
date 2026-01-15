@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .cards {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: mandatory;
+            -webkit-overflow-scrolling: touch;
+            gap: 10px;
+        }
+
+        .flex {
+    display: flex;
+    gap: 30px;
+    flex-wrap: nowrap;
+    overflow: auto;
+    
+}
+
+.flex::-webkit-scrollbar {
+    display: none;
+}
+    </style>
+    <div class="cards flex">
+            <img src="./assets/images/download.jfif" alt="">
+            <img src="./assets/images/download.jfif" alt="">
+            <img src="./assets/images/download.jfif" alt="">
+            <img src="./assets/images/download.jfif" alt="">
+            <img src="./assets/images/download.jfif" alt="">
+        </div>
+    </div>
+</body>
+</html>

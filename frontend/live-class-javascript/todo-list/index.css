@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* App container styles */
+#app-container {
+    margin: 20px auto;
+    width: 30%;
+    background-color: indianred;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+#msg {
+    background-color: rgb(216, 27, 27);
+    color: white;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid white;
+    border-radius: 8px;
+    margin: 10px 0;
+    
+}
+
+#input-field {
+    padding: 10px;
+}
+
+#add-btn {
+    padding: 10px;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#tasks-area {
+    background-color: lightgrey;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+ul {
+    list-style: none;
+    line-height: 30px;
+}
+
+li {
+    background-color: white;
+    color: midnightblue;
+    padding: 10px;
+    margin-top: 10px;
+}
