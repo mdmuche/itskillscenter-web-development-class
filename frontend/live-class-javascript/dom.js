@@ -35,3 +35,27 @@ btn.addEventListener('click', () => {
    img.setAttribute('src', './img/card-2.png');
    img.setAttribute('alt', 'card 2');
 })
+
+// creating and appending elements
+const newDiv = document.createElement('div');
+newDiv.textContent = 'i am a new div';
+document.body.appendChild(newDiv);
+
+// removing elements
+const elementToRemove = document.getElementById('sen');
+elementToRemove.parentNode.removeChild(elementToRemove);
+
+//? Events handling in DOM
+//? Commonly used events
+// 1. mouse events: click, dblclick, mouseover, mouseenter, mouseout
+// 2. Keyboard events: keyup, keydown
+// 3. form events: submit, change
+// 4. window events load, resize and scroll
+
+// adding events listners
+const button = document.getElementById('btn-2');
+button.addEventListener('click', () => {
+    alert('this button has an alarm.....')
+})
+
+// removing an event listener with removeEventListener
