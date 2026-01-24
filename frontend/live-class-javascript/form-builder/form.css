@@ -18,6 +18,7 @@
     width: 40%;
     background-color: goldenrod;
     padding: 10px 10px 80px 10px;
+    border-radius: 8px;
 }
 
 #err {
@@ -56,11 +57,19 @@ input[type="submit"] {
     cursor: pointer;
 }
 
+#name {
+    width: 48%;
+    position: absolute;
+    top: 40px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
 #input-enter {
     width: 80%;
     padding: 10px;
     background-color: white;
-    margin-bottom: 10px;
+    margin-bottom: 70px;
     border: none;
 }
 

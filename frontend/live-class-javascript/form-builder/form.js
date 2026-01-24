@@ -3,6 +3,7 @@ const form = document.querySelector('#form-btn');
 const inputEnter = document.getElementById('input-enter')
 const err = document.getElementById('err')
 const errClose = document.getElementById('err-close')
+const input = document.getElementsByClassName('input')
 
 const inputFieldArr = ['name', 'age', 'school', 'date', 'address',  'email', 'password', 'submit'];
 
@@ -10,7 +11,6 @@ function createNewField() {
     // create a new input element;
     // loop over array and check if the values entered in input field matches the inputFieldArr values
     
-    // TODO handle error case entering values not in the arr
     // show error message
     // console.log(inputFieldArr[inputFieldArr.indexOf(inputEnter.value)]);
     // console.log(inputFieldArr);
@@ -21,25 +21,29 @@ function createNewField() {
     ) {
        return err.style.display = 'block';
     }
-    for(i = 0; i < inputFieldArr.length; i++) {
-        // TODO handle case where an input field has already been entered
-        
+    // TODO handle case where an input field has already been entered
+
+    for(i = 0; i < inputFieldArr.length; i++) {      
         if (inputFieldArr[i] === inputEnter.value) {
         const newInput = document.createElement('input');
-        // console.log(inputFieldArr[i])
-        // set attributes for the new input element;
-        newInput.setAttribute('type', inputFieldArr[i]);
-        newInput.setAttribute('placeholder', 'enter your ' + inputFieldArr[i]);
-        newInput.setAttribute('class', 'input');
-        // console.log(newInput);
-        //append the new input element to the form container
-        form.appendChild(newInput);
-        // clear input field(s)
-        inputEnter.value = '';
-        // TODO hide error
-        // hide error msg
-        err.style.display = 'none';
-    }
+            // console.log(inputFieldArr[i])
+            // set attributes for the new input element;
+            newInput.setAttribute('type', inputFieldArr[i]);
+            newInput.setAttribute('placeholder', 'enter your ' + inputFieldArr[i]);
+            newInput.setAttribute('class', 'input');
+            // console.log(newInput.type);
+            //append the new input element to the form container
+            form.appendChild(newInput);
+            // clear input field(s)
+            inputEnter.value = '';
+            // TODO hide error
+            // hide error msg
+            err.style.display = 'none';
+
+            if(newInput.placeholder === 'enter your name') {
+                newInput.setAttribute('id', 'name')
+            }
+        }
     }
 }
 

@@ -13,32 +13,12 @@ body {
     background-color: rgb(229 231 235 / var(--tw-bg-opacity, 1));
 }
 
-.icon-check {
-    border: 1px solid black;
-    background-color: white;
-    border-radius: 5px;
-    padding: 5px;
-    width: 24px;
-    height: 24px;
-    /* width: fit-content; */
-    cursor: pointer;
-}
-.icon-check i {
-}
-
 i.fa-check {
-    visibility: hidden;
-    color: rgba(128, 128, 128);
-    /* display: none; */
+    color: rgba(128, 128, 128, 0.671);
 }
 
-.icon-check.active i {
-    visibility: visible;
-}
-
-#del-icon{
+i.fa-trash-o{
     cursor: pointer;
-    display: none;
 }
 
 i.circle{
@@ -94,41 +74,6 @@ body > div > div#top > .left .urgent{
     --tw-bg-opacity: 1;
     background-color: rgb(99 102 241 / var(--tw-bg-opacity, 1));
 }
-
-#input {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-#input input {
-    width: 70%;
-    padding: 10px;
-    border-radius: 8px;
-    border: 1px solid black;
-}
-
-#input button {
-    width: 25%;
-    padding: 10px;
-    border-radius: 8px;
-    border: none;
-    background-color: rgb(100 116 139 / var(--tw-text-opacity, 1));
-    color: white;
-    cursor: pointer;
-}
-
-@media (max-width: 450px) {
-    #input input {
-    width: 60%;
-}
-
-#input button {
-    width: 35%;
-}
-}
-
 @media (max-width: 768px) {
     body > div > div#top > .left .urgent, body > div > div#top > .left .latest{
     width: 50px;
@@ -151,17 +96,16 @@ body > div > div#top > .left .latest:hover{
     background-color: rgba(128, 128, 128, 0.132);
 }
 
-#center {
+body > div > div#center {
     width: 100%;
     display: flex;
     flex-direction: column;
 }
 
- li {
-     border: 2px solid rgba(128, 128, 128, 0.132);
-     border-radius: 8px;
+body > div > div#center > div.center-list{
     padding: 15px 12px;
     width: 100%;
+    /* border: 3px solid red; */
     display: flex;
     justify-content: space-between;
 }
@@ -179,15 +123,13 @@ body > div > div#center > div.magic:hover {
     background-color: rgba(128, 128, 128, 0.094);
 }
 
-  .center-lt .left {
+body > div > div#center > div > .left {
     display: flex;
-    align-items: center;
     gap: 10px;
 }
 
-.completed .lt {
+body > div > div#center > div > .left > span.lt{
     text-decoration: line-through;
-    opacity: 0.6;
     color: rgba(128, 128, 128, 0.858);
 }
 
