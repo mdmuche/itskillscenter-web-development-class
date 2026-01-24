@@ -24,27 +24,29 @@ form.innerHTML = `
 <div class="container" id="age-container">
 <label for="age">Age</label>
         <input class="input" type="number" id="age">
+        <div class="error"></div>
         </div>
         
         <div id="gender-container">
-        <label for="gender">Gender</label>
-        <select name="gender">
-        <option value="" disabled>Please select one…</option>
-        <option value="female">Female</option>
-        <option value="male">Male</option>
-        </select>
+        <label for="gender">Gender:</label>
+        <div id="radios">
+            <input type="radio" name="input-radio" value="Male" id="male"> Male
+            <input type="radio" name="input-radio" value="Female" id="female"> Female
+        </div>
+        <div class="error"></div>
         </div>
         
         <div id="cos-container">
         <label for="courseofstudy">Course of Study</label>
         <select name="courseofstudy" id="courseofstudy">
-        <option value="" disabled>Course of Study</option>
+        <option value="">Select a course”</option>
         <option value="biology">Biology</option>
         <option value="Physics">Physics</option>
         <option value="mathematics">Mathematics</option>
         <option value="chemistry">Chemistry</option>
         <option value="medlab">Medlab</option>
         </select>
+        <div class="error"></div>
         </div>
         
         <div class="container" id="password-container">
@@ -62,6 +64,7 @@ form.innerHTML = `
         <div id="checkbox-container">
         <input id="checkbox" type="checkbox" />
         <label for="checkbox">I agree to these <a href="#">Terms and Conditions</a>.</label>
+        <div class="error"></div>
         </div>
         
         <div id="btn">
@@ -79,6 +82,12 @@ form.innerHTML = `
     const age = form.querySelector('#age')
     const password = form.querySelector('#password')
     const confirmPassword = form.querySelector('#confirm-password')
+    const cosContainer = form.querySelector('#cos-container')
+    console.log(cosContainer)
+    const genderContainer = form.querySelector('#gender-container')
+    console.log(genderContainer)
+    const checkboxContainer = form.querySelector('#checkbox-container')
+    console.log(checkboxContainer)
     
     // add a placeholder attribute to all input fields
     const input = form.querySelectorAll('.input')
@@ -95,7 +104,7 @@ form.innerHTML = `
          : inputCaps === 'Email' 
          ? 'johndoe@example.com'
          : inputCaps === 'Phonenumber' 
-         ? '+23408140000000'
+         ? '08140000000'
          : inputCaps === 'Age' 
          ? '30'
          : inputCaps === 'Password' 
@@ -115,23 +124,38 @@ form.addEventListener('submit', (e) => {
 })
 
 const setError = (element, message) => {
-    const inputControl = element.parentElement;
-    const errorDisplay = inputControl.querySelector('.error');
+    // if element contains .error use it directly
+    const container = element.classList.contains('container') || element.id.includes('container') ? element : element.parentElement;
+
+    const errorDisplay = container.querySelector('.error');
+    if(!errorDisplay) return;
 
     errorDisplay.innerText = message;
-    inputControl.classList.add('error');
-    inputControl.classList.remove('success');
-    inputControl.querySelectorAll('.input')[0].style.border = '1px solid red';
+    container.classList.add('error');
+    container.classList.remove('success');
+
+    const inputControl = container.querySelector('.input');
+
+    if (inputControl) {
+      inputControl.style.border = '1px solid red';
+    }
 }
 
 const setSuccess = element => {
-    const inputControl = element.parentElement;
-    const errorDisplay = inputControl.querySelector('.error');
+    // if element contains .error use it directly
+    const container = element.classList.contains('container') || element.id.includes('container') ? element : element.parentElement;
+
+    const errorDisplay = container.querySelector('.error')
+    if(!errorDisplay) return;
 
     errorDisplay.innerText = '';
-    inputControl.classList.add('success');
-    inputControl.classList.remove('error');
-    inputControl.querySelectorAll('.input')[0].style.border = '1px solid green';
+    container.classList.add('success');
+    container.classList.remove('error');
+
+    const inputControl = container.querySelector('.input');
+    if(inputControl){
+        inputControl.style.border = '1px solid green';
+    }
 }
 
 const isValidEmail = email => {
@@ -141,16 +165,21 @@ const isValidEmail = email => {
 
 const validateInputs = () => {
     try {
+     let hasError = false;
      const fullnameValue = fullName.value.trim();
      const emailValue = email.value.trim()
      const phoneNumberValue = phoneNumber.value.trim()
-     const ageValue = Number(age.value.trim())
+     const ageValue = age.value.trim()
      const passwordValue = password.value.trim()
      const confirmPasswordValue = confirmPassword.value.trim()
 
+     const nameRegex = /^[A-Za-z]+(?:\s[A-Za-z]+)?$/;
+
      if(fullnameValue === '') {
          setError(fullName, 'Fullname required');
-        } else {
+        } else if (!nameRegex.test(fullName)) {
+         setError(fullName, 'Full name must contain only letters and at most two words')
+     } else {
           setSuccess(fullName)
         }
     if (fullnameValue.split(' ').length > 2) setError(fullName, 'fullname must be two words')
@@ -167,40 +196,78 @@ const validateInputs = () => {
 
     //  console.log(typeof(phoneNumber))
 
-    //  if(phoneNumberValue === '') {
-    //     setError(phoneNumber, 'Phone number is required')
-    //  } else if(!/^\d{10,14}$/.test(phoneNumberValue)) {
-    //     setError(phoneNumber, 'Provide a valid phonenumber')
-    //  } else {
-    //     setSuccess(phoneNumber)
-    //  }
+     if(phoneNumberValue === '') {
+        setError(phoneNumber, 'Phone number is required')
+     } else if(!/^\d{11}$/.test(phoneNumberValue)) {
+        setError(phoneNumber, 'Phone number must be 11 digits')
+     } else {
+        setSuccess(phoneNumber)
+     }
 
     //  console.log(typeof(ageValue))
-    //  if(ageValue === '') {
-    //     setError(age, 'Age is required')
-    //  } else if(isNaN(ageValue)) {
-    //     setError(age, 'Age must be a number')
-    // }  else if(ageValue < 18 || ageValue > 100) {
-    //     setError(age, 'Age must be between 18 and 100')
-    //  } else {
-    //     setSuccess(age)
-    //  }
+     if(ageValue === '') {
+        setError(age, 'Age is required')
+     } else if(isNaN(ageValue)) {
+        setError(age, 'Age must be a number')
+    }  else if(ageValue < 16 || ageValue > 60) {
+        setError(age, 'Age must be between 16 and 600')
+     } else {
+        setSuccess(age)
+     }
+
+     // Gender
+     const checked = document.querySelector('input[name="input-radio"]:checked')
+    //  console.log(checked.value);
+     if (!checked) {
+    //    alert('please select your gender');
+       setError(genderContainer, 'Please enter your gender')
+    //    return;
+          hasError = true;
+     }
+
+     // Course of study
+     const selected = document.getElementById('courseofstudy')
+    //  console.log(selected);
+    //  console.log(selected.value);
+    if(!selected.value) {
+        // console.log('selected value is: ', selected.value);
+        // alert('please select a course');
+        setError(cosContainer, 'Please enter a course')
+        // return;
+        hasError = true;
+    }
 
      if(passwordValue === '') {
         setError(password, 'Password is required')
      } else if(passwordValue.length < 8) {
         setError(password, 'Password must be atleast 8 character.')
+     } else if(passwordValue !== confirmPasswordValue) {
+        setError(password, "Passwords doesn't match");
      } else {
         setSuccess(password);
      }
 
     if(confirmPasswordValue === '') {
         setError(confirmPassword, 'Please confirm your password')
+     } else if(confirmPasswordValue.length < 8) {
+        setError(password, 'Password must be atleast 8 character.')
      } else if(confirmPasswordValue !== passwordValue) {
-        setError(confirmPassword, "Passwords doesn2t match");
+        setError(password, "Passwords doesn't match");
      } else {
         setSuccess(confirmPassword);
-     }   
+     }
+     
+     // checkbox
+     const checkboxSelected = document.querySelector('input[type="checkbox"]');
+    //  console.log(checkboxSelected.checked)
+     if(!checkboxSelected.checked) {
+        // alert('please agree to continue');
+        setError(checkboxContainer, 'Please agree to continue');
+        // return;
+        hasError = true;
+     }
+
+     if (hasError) return;
 
     } catch (err) {
         console.log('Error:', err.message)
