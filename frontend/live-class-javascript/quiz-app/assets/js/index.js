@@ -56,10 +56,12 @@ const displayQuiz = () => {
                 <h3>${questions[currentIndex].question}?</h3>
                 <div class="options">
                     <ol>
-                        ${questions[currentIndex].options.map((option, index) => {
-                       return `<li class="option"><input type="radio" name="option" id=${option} value=${index}> ${option}</li>`
-                    }).join('')
-                    }
+                        ${questions[currentIndex].options
+                            .map((option, index) => {
+                              return `<li class="option" id=${option} key=${index} ><input type="radio" name="option" id="option_${index + 1}" value=${index}> ${option}</li>`
+                             })
+                            .join('')
+                        }
                     </ol>
                 </div>
             </div>
@@ -75,8 +77,9 @@ nextBtn.addEventListener('click', () => {
      const selected = document.querySelector('input[name="option"]:checked');
 
     if (!selected) {
-    alert('Please select an answer');
-    return;
+      alert('Please select an answer');
+      // nextBtn.disabled = true;
+      return;
     }
 
     const userAnswer = Number(selected.value);
@@ -84,39 +87,18 @@ nextBtn.addEventListener('click', () => {
     if(userAnswer === questions[currentIndex].correctAnswer) {
        score++;
        console.log(score);
-       scoreBtn.style.display = 'block';
-       scoreBtn.textContent = score;
     }
-
+    
     if(currentIndex < questions.length - 1) {
         currentIndex++;
         displayQuiz();
-    } else {
-        nextBtn.disabled = true;
-        nextBtn.textContent = 'Finished';
+        return;
     }
+    
+    nextBtn.disabled = true;
+    nextBtn.style.cursor = 'not-allowed';
+    nextBtn.textContent = 'Finished';
+    container.innerHTML = `<h2>Quiz Completed 🎉</h2>`
+    scoreBtn.style.display = 'block';
+    scoreBtn.textContent += score;
 })
-// let questionsDisplay = questions
-// .map((question, index) => {
-//     question.options.map(option => console.log(option))
-//     // console.log(question);
-//     return (
-//         `<div key=${index}>
-//             <div id="questions">
-
-//             <span>Questions ${index + 1}.</span>
-//             <h3>${question.question}?</h3>
-//             <div id="options">
-//                 <ol>
-//                     ${question.options
-//                         .map(option => `<li class="option" key=${index}>${option}</li>`)
-//                         .join('')
-//                     }
-//                 </ol>
-//             </div>
-//         </div>
-//         </div>`
-//     )
-// }).join('');
-
-// container.innerHTML += questionsDisplay;

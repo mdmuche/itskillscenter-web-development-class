@@ -3,95 +3,92 @@ form.setAttribute('novalidate', true)
 form.setAttribute('action', '/')
 
 form.innerHTML = `
-<div class="container" id="fullname-container">
-<label for="fullname">Full Name</label>
-<input class="input" type="text" id="fullname">
-<div class="error"></div>
-</div>
-
-<div class="container" id="email-container">
-<label for="email">Email</label>
-<input class="input" type="email" id="email">
-<div class="error"></div>
-</div>
-
-<div class="container" id="phone-container">
-<label for="phonenumber">Phone Number</label>
-<input class="input" type="number" id="phonenumber">
-<div class="error"></div>
-</div>
-
-<div class="container" id="age-container">
-<label for="age">Age</label>
-        <input class="input" type="number" id="age">
-        <div class="error"></div>
-        </div>
+<div class="container con" id="fullname-container">
+      <label for="fullname">Full Name</label>
+      <input class="input" type="text" id="fullname">
+      <div class="error"></div>
+      </div>
+      
+      <div class="container con" id="email-container">
+      <label for="email">Email</label>
+      <input class="input" type="email" id="email">
+      <div class="error"></div>
+      </div>
+      
+      <div class="container con" id="phone-container">
+      <label for="phonenumber">Phone Number</label>
+      <input class="input" type="number" id="phonenumber">
+      <div class="error"></div>
+   </div>
+   
+   <div class="container con" id="age-container">
+   <label for="age">Age</label>
+   <input class="input" type="number" id="age">
+      <div class="error"></div>
+      </div>
         
-        <div id="gender-container">
-        <label for="gender">Gender:</label>
-        <div id="radios">
-            <input type="radio" name="input-radio" value="Male" id="male"> Male
-            <input type="radio" name="input-radio" value="Female" id="female"> Female
-        </div>
-        <div class="error"></div>
-        </div>
-        
-        <div id="cos-container">
-        <label for="courseofstudy">Course of Study</label>
-        <select name="courseofstudy" id="courseofstudy">
-        <option value="">Select a course”</option>
-        <option value="biology">Biology</option>
-        <option value="Physics">Physics</option>
-        <option value="mathematics">Mathematics</option>
-        <option value="chemistry">Chemistry</option>
-        <option value="medlab">Medlab</option>
-        </select>
-        <div class="error"></div>
-        </div>
-        
-        <div class="container" id="password-container">
-        <label for="password">Password</label>
-        <input class="input" type="password" id="password">
-        <div class="error"></div>
-        </div>
-        
-        <div class="container" id="confirm-container">
-        <label for="confirm-password">Confirm Password</label>
-        <input class="input" type="password" id="confirm-password">
-        <div class="error"></div>
-        </div>
-        
-        <div id="checkbox-container">
-        <input id="checkbox" type="checkbox" />
-        <label for="checkbox">I agree to these <a href="#">Terms and Conditions</a>.</label>
-        <div class="error"></div>
-        </div>
-        
-        <div id="btn">
-        <button id="register" type="submit">
-        Register
-        </button>
-    </div>
-    `
-    
-    document.body.appendChild(form);
-
-    const fullName = form.querySelector('#fullname')
-    const email = document.getElementById('email')
+      <div class="container" id="gender-container">
+      <label for="gender">Gender:</label>
+      <div id="radios">
+      <input type="radio" name="input-radio" value="Male" id="male"> Male
+      <input type="radio" name="input-radio" value="Female" id="female"> Female
+      </div>
+      <div class="error"></div>
+      </div>
+      
+      <div class="container" id="cos-container">
+      <label for="courseofstudy">Course of Study</label>
+      <select name="courseofstudy" id="courseofstudy">
+      <option value="">Select a course</option>
+      <option value="biology">Biology</option>
+      <option value="Physics">Physics</option>
+      <option value="mathematics">Mathematics</option>
+      <option value="chemistry">Chemistry</option>
+      <option value="medlab">Medlab</option>
+      </select>
+      <div class="error"></div>
+      </div>
+      
+      <div class="container con" id="password-container">
+      <label for="password">Password</label>
+      <input class="input" type="password" id="password">
+      <div class="error"></div>
+      </div>
+      
+      <div class="container con" id="confirm-container">
+      <label for="confirm-password">Confirm Password</label>
+      <input class="input" type="password" id="confirm-password">
+      <div class="error"></div>
+      </div>
+      
+      <div class="container" id="checkbox-container">
+      <input id="checkbox" type="checkbox" />
+      <label for="checkbox">I agree to these <a href="#">Terms and Conditions</a>.</label>
+      <div class="error"></div>
+      </div>
+      
+      <div id="btn">
+      <button id="register" type="submit">
+      Register
+      </button>
+      </div>
+      `
+      
+      document.body.appendChild(form);
+      const stdArr = [];
+      
+      const fullName = form.querySelector('#fullname')
+      const email = document.getElementById('email')
     const phoneNumber = form.querySelector('#phonenumber')
     const age = form.querySelector('#age')
     const password = form.querySelector('#password')
     const confirmPassword = form.querySelector('#confirm-password')
     const cosContainer = form.querySelector('#cos-container')
-    console.log(cosContainer)
     const genderContainer = form.querySelector('#gender-container')
-    console.log(genderContainer)
     const checkboxContainer = form.querySelector('#checkbox-container')
-    console.log(checkboxContainer)
     
     // add a placeholder attribute to all input fields
     const input = form.querySelectorAll('.input')
-    // console.log(Array.from(input));
     Array.from(input).forEach(inp => {
         const inputCaps = inp.id.slice(0,1).toUpperCase() + inp.id.slice(1,inp.length);
     // console.log(inputCaps)
@@ -113,14 +110,6 @@ form.innerHTML = `
          ? '*********'
          : ''
         );
-    // console.log(inputCaps);
-    // inp.placeholder === inp.id ? input.placeholder = inp.id.slice(0,1).toUpperCase() + inp.id.slice(1,inp.length) : '';
-})
-
-form.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    validateInputs()
 })
 
 const setError = (element, message) => {
@@ -155,121 +144,163 @@ const setSuccess = element => {
     const inputControl = container.querySelector('.input');
     if(inputControl){
         inputControl.style.border = '1px solid green';
-    }
-}
+      }
+   }
+   
+   const isValidEmail = email => {
+      const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return regex.test(email);
+   };
 
-const isValidEmail = email => {
-  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  return regex.test(email);
-};
+   
+   // const validateInputs = () => {
+   fullName.addEventListener('input', () => {
+      const fullnameValue = fullName.value.trim();
+      const nameRegex = /^[A-Za-z]+(?:\s[A-Za-z]+)?$/;
+      
+      if(fullnameValue === '') {
+         fullName.addEventListener('change', () => {
+            setError(fullName, 'Fullname required');
+         })
+           } else if (!nameRegex.test(fullName)) {
+               setError(fullName, 'Full name must contain only letters and at most two words')
+            } else {
+            setSuccess(fullName)
+         }
+         if (fullnameValue.split(' ').length > 2) (fullName, 'fullname must be two words')
+            
+            if (fullnameValue.split(' ').length === 2) setSuccess(fullName)
+            })
+         
+         // Validate Email
+         email.addEventListener('input', () => {
+            const emailValue = email.value.trim()
+            if(emailValue === '') {
+               setError(email, 'Email is required')
+            } else if(!isValidEmail(emailValue)) {
+               setError(email, 'Provide a valid email address')
+   } else {
+      setSuccess(email)
+   }
+})
+
+// Validate Phonenumber
+phoneNumber.addEventListener('input', () => {
+   const phoneNumberValue = phoneNumber.value.trim()
+   if(phoneNumberValue === '') {
+      setError(phoneNumber, 'Phone number is required')
+   } else if(!/^\d{11}$/.test(phoneNumberValue)) {
+      setError(phoneNumber, 'Phone number must be 11 digits')
+   } else {
+      setSuccess(phoneNumber)
+   }
+})
+
+// Validate Age
+age.addEventListener('input', () => {
+   const ageValue = age.value.trim()
+   if(ageValue === '') {
+      setError(age, 'Age is required')
+   } else if(isNaN(ageValue)) {
+      setError(age, 'Age must be a number')
+   }  else if(ageValue < 16 || ageValue > 60) {
+      setError(age, 'Age must be between 16 and 60')
+   } else {
+      setSuccess(age)
+   }
+})
+
+// Validate Password
+password.addEventListener('input', () => {
+   const passwordValue = password.value.trim()
+   if(passwordValue === '') {
+      setError(password, 'Password is required')
+   } else if(passwordValue.length < 8) {
+      setError(password, 'Password must be atleast 8 character.')
+   } else {
+      setSuccess(password);
+   }
+})
+
+// Validate Confirm-Password
+confirmPassword.addEventListener('input', () => {
+   const confirmPasswordValue = confirmPassword.value.trim()
+   const passwordValue = password.value.trim()
+   if(confirmPasswordValue === '') {
+      setError(confirmPassword, 'Please confirm your password')
+   } else if(confirmPasswordValue.length < 8) {
+      setError(confirmPassword, 'Password must be atleast 8 character.')
+   } else if((confirmPasswordValue !== passwordValue)) {
+      setError(confirmPassword, "Passwords doesn't match");
+   } else {
+      setSuccess(confirmPassword);
+   }
+})
 
 const validateInputs = () => {
-    try {
-     let hasError = false;
-     const fullnameValue = fullName.value.trim();
-     const emailValue = email.value.trim()
-     const phoneNumberValue = phoneNumber.value.trim()
-     const ageValue = age.value.trim()
-     const passwordValue = password.value.trim()
-     const confirmPasswordValue = confirmPassword.value.trim()
-
-     const nameRegex = /^[A-Za-z]+(?:\s[A-Za-z]+)?$/;
-
-     if(fullnameValue === '') {
-         setError(fullName, 'Fullname required');
-        } else if (!nameRegex.test(fullName)) {
-         setError(fullName, 'Full name must contain only letters and at most two words')
-     } else {
-          setSuccess(fullName)
-        }
-    if (fullnameValue.split(' ').length > 2) setError(fullName, 'fullname must be two words')
-    
-    if (fullnameValue.split(' ').length === 2) setSuccess(fullName)
-
-     if(emailValue === '') {
-        setError(email, 'Email is required')
-     } else if(!isValidEmail(emailValue)) {
-        setError(email, 'Provide a valid email address')
-     } else {
-        setSuccess(email)
-     }
-
-    //  console.log(typeof(phoneNumber))
-
-     if(phoneNumberValue === '') {
-        setError(phoneNumber, 'Phone number is required')
-     } else if(!/^\d{11}$/.test(phoneNumberValue)) {
-        setError(phoneNumber, 'Phone number must be 11 digits')
-     } else {
-        setSuccess(phoneNumber)
-     }
-
-    //  console.log(typeof(ageValue))
-     if(ageValue === '') {
-        setError(age, 'Age is required')
-     } else if(isNaN(ageValue)) {
-        setError(age, 'Age must be a number')
-    }  else if(ageValue < 16 || ageValue > 60) {
-        setError(age, 'Age must be between 16 and 600')
-     } else {
-        setSuccess(age)
-     }
-
-     // Gender
-     const checked = document.querySelector('input[name="input-radio"]:checked')
-    //  console.log(checked.value);
+   let hasError = false;
+   
+   // Gender
+   const checked = document.querySelector('input[name="input-radio"]:checked')
      if (!checked) {
-    //    alert('please select your gender');
        setError(genderContainer, 'Please enter your gender')
-    //    return;
-          hasError = true;
+         hasError = true;
      }
 
-     // Course of study
+     //Validate Course of study
      const selected = document.getElementById('courseofstudy')
-    //  console.log(selected);
-    //  console.log(selected.value);
-    if(!selected.value) {
-        // console.log('selected value is: ', selected.value);
-        // alert('please select a course');
-        setError(cosContainer, 'Please enter a course')
-        // return;
-        hasError = true;
-    }
+      if(!selected.value) {
+         setError(cosContainer, 'Please enter a course')
+         hasError = true;
+      }
+   // })
 
-     if(passwordValue === '') {
-        setError(password, 'Password is required')
-     } else if(passwordValue.length < 8) {
-        setError(password, 'Password must be atleast 8 character.')
-     } else if(passwordValue !== confirmPasswordValue) {
-        setError(password, "Passwords doesn't match");
-     } else {
-        setSuccess(password);
-     }
-
-    if(confirmPasswordValue === '') {
-        setError(confirmPassword, 'Please confirm your password')
-     } else if(confirmPasswordValue.length < 8) {
-        setError(password, 'Password must be atleast 8 character.')
-     } else if(confirmPasswordValue !== passwordValue) {
-        setError(password, "Passwords doesn't match");
-     } else {
-        setSuccess(confirmPassword);
-     }
-     
-     // checkbox
+   //   // checkbox
      const checkboxSelected = document.querySelector('input[type="checkbox"]');
-    //  console.log(checkboxSelected.checked)
      if(!checkboxSelected.checked) {
-        // alert('please agree to continue');
         setError(checkboxContainer, 'Please agree to continue');
-        // return;
         hasError = true;
      }
-
-     if (hasError) return;
-
-    } catch (err) {
-        console.log('Error:', err.message)
-    }
+     return !hasError;
 }
+
+// clear input fields after submitting form
+const resetForm = () => {
+   form.querySelectorAll('.input').forEach((input) => {
+      input.value = '';
+      input.style.border = '';
+   })
+
+   document.querySelectorAll('input[type="radio"]').forEach(radio => radio.checked = false);
+
+   document.getElementById('courseofstudy').value = '';
+
+   document.getElementById('checkbox').checked = false;
+
+   form.querySelectorAll('.container').forEach(container => {
+      container.classList.remove('error', 'success');
+      const err = container.querySelector('.error');
+      if (err) err.innerText = '';
+   })
+
+}
+
+form.addEventListener('submit', (e) => {
+   e.preventDefault();
+
+   let hasEmpty = false;
+   form.querySelectorAll('input').forEach(input => {
+      if(input.value.trim() === ''){
+         hasEmpty = true;
+         setError(input, 'This field is required');
+      }
+   })
+
+   if(hasEmpty) return;
+   
+   if (!validateInputs()) return;
+   alert('Regisration was Successful!')
+
+   // reset fields
+   resetForm();
+})

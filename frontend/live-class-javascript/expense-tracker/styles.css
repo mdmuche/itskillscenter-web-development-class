@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Storm&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#container {
+    font-family: "Rubik Storm", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    box-shadow: 1px 1px 1px black;
+    border-radius: 18px;
+    padding: 20px;
+    width: 60%;
+    background-color: goldenrod;
+    margin: 20px auto;
+}
+
+#addExpenseContainer {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input {
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    margin: auto;
+    border: none;
+    background-color: black;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+}
+
+ul {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    list-style-type: none;
+}
+
+li {
+    border-bottom: 2px solid grey;
+}
+
+h3 {
+    margin-top: 20px;
+}

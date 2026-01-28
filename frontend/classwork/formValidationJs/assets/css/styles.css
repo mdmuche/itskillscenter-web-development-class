@@ -21,12 +21,10 @@ form {
     gap: 20px;
 }
 
-.container {
+.con {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    /* gap: 20px; */
-    /* align-items: center; */
     width: 100%;
 }
 

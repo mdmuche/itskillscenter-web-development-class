@@ -12,7 +12,6 @@ const msg = document.getElementById('msg');
 const cancelBtn = document.querySelector('.fa-times');
 const modal = document.getElementById('modal');
 const editInputField = document.getElementsByClassName('edit-input')[0];
-console.log(editInputField.value);
 
 /******************
  * PART 2: ADD TASK FUNCTION
@@ -21,9 +20,10 @@ console.log(editInputField.value);
 tasksArea.style.display = 'none';
 // Hide msg
 msg.style.display = 'none';
+
+let tasksBeingEdited = null;
 // declare a function to add task
 const addTask = () => {
-  // alert('Buton Clicked ' + inputField.value);
   let taskText = inputField.value.trim();
   
   // Show msg
@@ -36,7 +36,6 @@ const addTask = () => {
         // Show Input field on default
         tasksArea.style.display = 'block';
       }
-      // task.textContent = taskText;
     li.innerHTML = `
     <span class="task-text">${taskText}</span>
     <div id="icons">
@@ -45,10 +44,7 @@ const addTask = () => {
     <i class="fa fa-trash-o delete-btn"></i>
     </div>
     `;
-    // console.log(li.innerHTML)
-    // console.log(task);
     taskList.appendChild(li);
-    // console.log(taskList.appendChild(task));
     // clear input field after each task is added
         inputField.value = '';
         
@@ -67,39 +63,16 @@ const addTask = () => {
      editBtn.addEventListener('click', () => {
        // show modal
        modal.style.display = 'block';
-       console.log(modal);
        // hide form container
        appContainer.style.opacity = 0.2;
-       // appContainer.style.display = 'none';
-       // li.classList.toggle('completed');
-       // console.log('normal');
-       // const inputToEdit = icons.nextSibling();
-       let textToEdit = li.querySelector('.task-text');
-       // editInputField.setAttribute('placeholder', taskText.textContent);
-       editInputField.value = textToEdit.textContent;
-       let inputToEdit = textToEdit.textContent;
-       addBtn2.addEventListener('click', () => {
-         console.log(inputToEdit);
-         textToEdit.textContent = editInputField.value;
-         // clear input field
-         console.log(textToEdit.textContent)
-         editInputField.value = '';
-         
-         // Hide modal
-         modal.style.display = 'none';
-         // show form container
-         // appContainer.style.display = 'block'
-         appContainer.style.opacity = 1;
-        })
-        console.log(inputToEdit)
-        // console.log(inputToEdit);
+        tasksBeingEdited = li.querySelector('.task-text');
+       editInputField.value = tasksBeingEdited.textContent;
+       let inputToEdit = tasksBeingEdited.textContent;
         const cancelModalBtn = modal.querySelector('#cancel-btn');
-        // console.log(cancelModalBtn);
         cancelModalBtn.addEventListener('click', () => {
               appContainer.style.display = 'block';
               modal.style.display = 'none';
               appContainer.style.opacity = 1;
-              console.log('clicking');
            })
        })
        
@@ -111,6 +84,19 @@ const addTask = () => {
         li.remove();
       });
 };
+
+   addBtn2.addEventListener('click', () => {
+        if(!tasksBeingEdited) return;
+         tasksBeingEdited.textContent = editInputField.value;
+         // clear input field
+         editInputField.value = '';
+         
+         // Hide modal
+         modal.style.display = 'none';
+         appContainer.style.opacity = 1;
+
+         tasksBeingEdited = null;
+        })
 
 /*****************
  * PART 5: EVENT LISTENERS
