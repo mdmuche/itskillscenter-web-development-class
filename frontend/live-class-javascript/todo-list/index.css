@@ -119,3 +119,14 @@ li {
   cursor: pointer;
   width: 48%;
 }
+@media (max-width: 768px) {
+  #app-container {
+    width: 80%;
+  }
+  #modal {
+    width: 60%;
+  }
+  #modal #input-field {
+    width: 100%;
+  }
+}
