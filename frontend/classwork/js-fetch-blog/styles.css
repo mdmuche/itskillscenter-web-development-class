@@ -1,0 +1,164 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#show-blog {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+#show-blog button {
+    margin: 10px 0px 20px 0;
+    border: 1px solid #ffffff;
+    background-color: black;
+    color: #ffffff;
+    padding: 10px 15px;
+    border-radius: 18px;
+    cursor: pointer;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+body {
+    padding: 20px;
+    background-color: midnightblue;
+    color: white;
+}
+
+#cards {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    overflow: hidden;
+    width: 100%;
+    gap: 30px;
+}
+
+.card {
+    padding: 20px;
+    width: 30%;
+    border: 2px solid #ffffff;
+    border-radius: 8px;
+}
+
+.card:hover {
+    background-color: black;
+    transform: translateY(-18px);
+}
+
+p {
+    margin: 10px 0;
+}
+
+a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 5px;
+    background-color: black;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+a:hover {
+    background-color: #ffffff;
+    color: black;
+}
+
+h3 {
+    font-size: 16px;
+}
+
+#pages {
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 40%;
+}
+
+#pages button {
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    padding: 8px;
+}
+
+ul li {
+    display: inline-block;
+    margin: 0 10px;
+    background: black;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    padding: 8px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    background-position: 0 -45px;
+    transition: background-position 0.5s;
+}
+
+#btn1, #btn2 {
+    background: transparent;
+    color: #ffffff;
+    display: inline-flex;
+    align-items: center;
+    font-size: 22px;
+    font-weight: 500;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.active {
+    color: #ffffff;
+    background-image: linear-gradient(#ff4568, #ff4568);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+}
+
+@media (max-width: 768px) {
+.card {
+    width: 46%;
+}
+
+#pages {
+    width: 60%;
+}
+}
+
+@media (max-width: 567px) {
+
+body {
+    padding: 10px;
+}
+
+#show-blog {
+    padding: 8px;
+}
+
+ul li {
+    margin: 0 5px;
+    padding: 8px;
+    font-size: 14px;
+}
+
+#pages {
+    width: 100%;
+}
+}
+
+@media (max-width: 425px) {
+.card {
+    width: 100%;
+}
+}
