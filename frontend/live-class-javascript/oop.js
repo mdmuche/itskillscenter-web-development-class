@@ -70,7 +70,32 @@ class BankAccount {
 }
 
 const mucheBankAccount = new BankAccount();
-// mucheBankAccount.withdrawal(3000);
-// mucheBankAccount.deposit(3000);
-// mucheBankAccount.withdrawal(1000);
-// mucheBankAccount.getBalance();
+mucheBankAccount.withdrawal(3000);
+mucheBankAccount.deposit(3000);
+mucheBankAccount.withdrawal(1000);
+mucheBankAccount.getBalance();
+
+class Products {
+    constructor(prodName, prodPrice, prodDetails, prodCategory){
+        this.prodName = prodName;
+        this.prodPrice = prodPrice;
+        this.prodCategory = prodCategory;
+        this.prodDetails = prodDetails
+
+    }
+        setPrice = () => {
+            console.log(`${this.prodName} in the ${this.prodCategory} category is sold at #${this.prodPrice}`)
+        }
+}
+
+// const hair = new Products('Brazilian hair', 3000, 'lorem ipsum todo lorem ipsum todo', 'lorem hair');
+// console.log(hair);
+// hair.setPrice();
+
+// const furniture = new Products('chair', 5000, 'lorem ipsum todo lorem ipsum todo', 'lori chair');
+// console.log(furniture)
+// furniture.setPrice();
+
+// const cars = new Products('bmw', 12000000, 'lorem ipsum lorem ipsum itodo', 'tokunbo')
+// console.log(cars)
+// cars.setPrice();

@@ -6,6 +6,7 @@
 
 /* App container */
 #app-container {
+  position: relative;
   margin: 20px auto;
   width: 30%;
   background-color: indianred;
@@ -119,6 +120,19 @@ li {
   cursor: pointer;
   width: 48%;
 }
+
+#clear-container {
+  position: absolute;
+  top: 0px;
+  right: 10px;
+  margin-top: 10px;
+  width: fit-content;
+  background-color: black;
+  color: white;
+  padding: 10px;
+  border-radius: 50%;
+}
+
 @media (max-width: 768px) {
   #app-container {
     width: 80%;
@@ -130,3 +144,4 @@ li {
     width: 100%;
   }
 }
+
