@@ -6,6 +6,11 @@ import NameInput from './components/NameInput';
 import Parent from './components/Parent';
 import ParentComponentCorrect from './components/ParentComponentCorrect';
 import MyComponent from './components/MyComponent';
+import CounterReducer from './components/CounterReducer';
+import ThemedButton from './components/ThemedButton';
+import { ThemeContext } from './context/ThemeContext';
+
+
 
 function App() {
   return (
@@ -18,6 +23,10 @@ function App() {
         <FocusInput />
         <ParentComponentCorrect />
         <MyComponent onSave={(value) => console.log('Saved value:', value)}/>
+        <CounterReducer />
+        <ThemeContext.Provider value='gold'>
+          <ThemedButton />
+        </ThemeContext.Provider>
     </div>
   );
 }
