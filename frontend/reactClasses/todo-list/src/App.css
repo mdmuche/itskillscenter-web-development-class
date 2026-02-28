@@ -1,0 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: goldenrod;
+  color: white;
+}
+
+.todo-app {
+  padding: 20px;
+  border-radius: 8px;
+  background-color: black;
+  width: 50%;
+  margin: 20px auto;
+}
+
+input {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.add-btn {
+  border-radius: 8px;
+  color: white;
+  background-color: green;
+  padding: 10px;
+  border: none;
+  margin-left: 5px;
+}
+
+li {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.delete-btn {
+  border-radius: 8px;
+  color: white;
+  padding: 10px;
+  border: none;
+  background-color: red;
+}

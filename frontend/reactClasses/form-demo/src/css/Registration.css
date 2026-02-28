@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: grey;
+}
+h1 {
+    color: goldenrod;
+    text-align: center;
+}
+
+form {
+    background-color: black;
+    border-radius: 18px;
+    padding: 20px;
+    width: 50%;
+    margin:  20px auto;
+}
+
+input {
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+}
+
+button {
+    padding: 10px;
+    background-color: goldenrod;
+    border: none;
+    color: white;
+    border-radius: 8px;
+}
+
+.card {
+    width: 40%;
+    background-color: goldenrod;
+    color: white;
+    padding: 20px;
+    margin: 20px auto;
+}
+
+h3 {
+    color: black;
+}
+
+strong {
+    color: black;
+}
