@@ -1,7 +1,9 @@
+import { X } from "lucide-react"
+
 function ClearBtn() {
   return (
     <div title="clear" className="clear-container">
-        <i className="fa fa-minus"></i>
+        <X size={40} />
     </div>
   )
 }
