@@ -12,7 +12,7 @@ function TodoList() {
             todolist.length === 0 ?
             <p className="no-todo">No Todo(s)</p> :
             (
-                <ul>
+                <ul className="list-items">
                     {
                         todolist.map((todo) => (
                            <TodoItemm key={todo.id} todo={todo}/> 

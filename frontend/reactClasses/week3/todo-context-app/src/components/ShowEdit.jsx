@@ -15,14 +15,15 @@ const [todoInputValue, setTodoInputValue] = useState(text);
     }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="update-todos" onSubmit={handleSubmit}>
       <input 
+      className="update-input"
       type="text"
       placeholder="Enter Todo"
       value={todoInputValue}
       onChange={(e) => setTodoInputValue(e.target.value)}
        />
-       <button type="submit">Update</button>
+       <button className="btn" type="submit">Update</button>
     </form>
   )
 }

@@ -3,6 +3,7 @@ import './App.css'
 import TodoInput from './components/TodoInput'
 import TodoList from './components/TodoList'
 import { ThemeContext } from './context/ThemeContext';
+import ClearBtn from './components/ClearBtn';
 
 function App() {
   const { theme, toggleTheme } = useContext(ThemeContext)
@@ -20,11 +21,13 @@ function App() {
 
       <h3>{theme.toUpperCase()} MODE</h3>
 
-      <button onClick={toggleTheme}>
+      <button className='toggle-btn btn' onClick={toggleTheme}>
         Toggle Theme
       </button>
       <TodoInput />
       <TodoList />
+      <ClearBtn />
+      <p className='copy'>&copy;Mdmuche</p>
     </div>
   )
 }

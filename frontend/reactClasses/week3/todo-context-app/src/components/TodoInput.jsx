@@ -14,14 +14,14 @@ function TodoInput() {
       setTodoInputValue('');
     }
   return (
-    <form onSubmit={handleSubmit}>
-      <input 
+    <form className="create-todos" onSubmit={handleSubmit}>
+      <input className="todo-input" 
       type="text"
       placeholder="Enter Todo"
       value={todoInputValue}
       onChange={(e) => setTodoInputValue(e.target.value)}
        />
-       <button type="submit">Add</button>
+       <button className="btn" type="submit">Add</button>
     </form>
   )
 }

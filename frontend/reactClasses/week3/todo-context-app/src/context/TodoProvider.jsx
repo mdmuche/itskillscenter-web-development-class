@@ -12,28 +12,28 @@ function TodoProvider({ children }) {
   const notify = (mssg) =>
     toast.success(mssg, {
       theme: "dark",
-      position: "top-center",
-      duration: 5000,
+      position: "top-right",
+      duration: 1000,
     });
 
     const addTodos = (todoText) => {
         setTodos([...todos, {id: Date.now(), text: todoText}])
         notify('Todo added Successfully!')
     }
-
-   const deleteTodos = (id) => {
-    setTodos(todos.filter((todo) => todo.id !== id))
-    notify('Todo deleted successfully!')
-   }
-
-   const editTodos = (id, newTodoText) => {
+    
+    const editTodos = (id, newTodoText) => {
       todos.map(() => {
         let selected = todos.filter((todo) => todo.id === id);
-        selected.map((todo) => todo.text = newTodoText)
+        selected.map((todo) => todo.text = newTodoText);
         setTodos([...todos])
-        notify('Todo updated successfully!')
       })
-}
+      notify('Todo updated successfully!')
+    }
+    
+    const deleteTodos = (id) => {
+     setTodos(todos.filter((todo) => todo.id !== id))
+     notify('Todo deleted successfully!')
+    }
 
   return (
     <div>
