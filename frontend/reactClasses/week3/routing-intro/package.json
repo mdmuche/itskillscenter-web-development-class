@@ -1,8 +1,8 @@
 {
-  "name": "week2",
-  "description": "this is week 2 class learning about: Day1: usestate, useeffect, stateful components and Passing State to Child Components Day3: React Hooks Day4: Using useState to manage State",
+  "name": "routing-intro",
   "version": "0.1.0",
   "private": true,
+  "description": "Routing",
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.9.1",
@@ -10,6 +10,7 @@
     "@testing-library/user-event": "^13.5.0",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
+    "react-router-dom": "^7.13.1",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
