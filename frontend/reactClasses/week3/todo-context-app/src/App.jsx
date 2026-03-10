@@ -17,7 +17,7 @@ function App() {
 
   return (
     <div style={styles} className='app'>
-      <h1 className='h'>TODO List (useContext)</h1>
+      <h1 className='h'>Todo List</h1>
 
       <h3>{theme.toUpperCase()} MODE</h3>
 

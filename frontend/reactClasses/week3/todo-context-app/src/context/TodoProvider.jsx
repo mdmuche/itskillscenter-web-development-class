@@ -1,24 +1,24 @@
 import { useState } from "react"
-//toastify step 1
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
 
 import { TodoContext } from "./TodoContext";
 
 function TodoProvider({ children }) {
     const [todos, setTodos] = useState([]);
 
-     //toastify step 2
+    const resolveAfter3Sec = new Promise((resolve) => setTimeout(resolve, 3000));
+
+  
   const notify = (mssg) =>
-    toast.success(mssg, {
-      theme: "dark",
-      position: "top-right",
-      duration: 1000,
+    toast.promise(resolveAfter3Sec, {
+      pending: mssg + ' is pending',
+      success: mssg + ' was successful!',
+      error: mssg + ' failed'
     });
 
     const addTodos = (todoText) => {
         setTodos([...todos, {id: Date.now(), text: todoText}])
-        notify('Todo added Successfully!')
+        notify('Todo add')
     }
     
     const editTodos = (id, newTodoText) => {
@@ -27,12 +27,12 @@ function TodoProvider({ children }) {
         selected.map((todo) => todo.text = newTodoText);
         setTodos([...todos])
       })
-      notify('Todo updated successfully!')
+      notify('Todo update')
     }
     
     const deleteTodos = (id) => {
      setTodos(todos.filter((todo) => todo.id !== id))
-     notify('Todo deleted successfully!')
+     notify('Todo delete')
     }
 
   return (
@@ -40,7 +40,6 @@ function TodoProvider({ children }) {
       <TodoContext.Provider value={{todos, addTodos, deleteTodos, editTodos}} >
         {children}
       </TodoContext.Provider>
-       <ToastContainer />
     </div>
   )
 }
