@@ -1,15 +1,21 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 
-import { TodoContext } from "../context/TodoContext";
 
-function ShowEdit({ todo , text, setShow }) {
+import { useDispatch } from "react-redux";
+import { editTodo } from "../features/todos/TodoSlice";
+
+function EditTodo({ todo , text, setShow }) {
+const dispatch = useDispatch();
 const [todoInputValue, setTodoInputValue] = useState(text);
-const { editTodos } = useContext(TodoContext)
 
 const handleSubmit = (e) => {
     e.preventDefault();
 
-    editTodos(todo.id, todoInputValue);
+    dispatch(editTodo({
+        text: todoInputValue, 
+        id: todo.id
+    })
+);
           
     setTodoInputValue('');
     setShow(false);
@@ -29,4 +35,4 @@ const handleSubmit = (e) => {
   )
 }
 
-export default ShowEdit
+export default EditTodo

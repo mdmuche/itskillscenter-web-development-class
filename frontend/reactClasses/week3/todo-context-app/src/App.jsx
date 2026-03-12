@@ -1,9 +1,11 @@
 import { useContext } from 'react';
-import './App.css'
+
 import TodoInput from './components/TodoInput'
 import TodoList from './components/TodoList'
 import { ThemeContext } from './context/ThemeContext';
 import ClearBtn from './components/ClearBtn';
+
+import './App.css'
 
 function App() {
   const { theme, toggleTheme } = useContext(ThemeContext)

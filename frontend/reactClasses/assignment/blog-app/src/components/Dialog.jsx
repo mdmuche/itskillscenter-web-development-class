@@ -1,12 +1,11 @@
-import { useContext } from "react"
+import { useDispatch } from "react-redux"
+import { deleteBlog } from "../features/blog/blogSlice";
 
-import { TodoContext } from "../context/TodoContext"
-
-function Dialog({todo, setDialog}) {
-    const { deleteTodos } = useContext(TodoContext)
+function Dialog({blog, setDialog}) {
+    const dispatch = useDispatch();
 
     const deleteTodo = () => {
-        deleteTodos(todo.id)
+        dispatch(deleteBlog(blog.id))
         setDialog(false)
     }
   return (
