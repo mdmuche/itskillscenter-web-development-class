@@ -7,8 +7,8 @@ function App() {
   return (
     <>
       <h1>React Api Demo</h1>
-      <Posts />
       <Users />
+      <Posts />
     </>
   )
 }
