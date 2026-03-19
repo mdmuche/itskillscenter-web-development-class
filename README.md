@@ -9,6 +9,6 @@ This is a Fullstack Development class with Itskillscenter for a period of 7 mont
 - CSS - ✅
 - Tailwind CSS - ✅
 - JavaScript - ✅
-- React - ⏳
-- NodeJS
-- Express
+- React - ✅
+- NodeJS - ⏳
+- Express - ⏳
