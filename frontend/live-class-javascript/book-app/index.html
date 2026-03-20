@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
+    <title>Book app</title>
+</head>
+<body>
+    <div class="app">
+
+        <h1>Book App</h1>
+        
+        <form>
+            <input 
+        type="text"
+        placeholder="title"
+        id="title"
+        required
+        >
+        <br>
+        <input 
+        type="text"
+        placeholder="author"
+        id="author"
+        required
+        >
+        <br>
+        <input 
+        type="date"
+        id="year"
+        required
+        >
+        <br>
+        <button id="add-btn">Add</button>
+    </form>
+    
+    <h2 class="h2">List of Books</h2>
+    <ul id="cards">
+        
+    </ul>
+    
+</div>
+    <script src="./index.js"></script>
+</body>
+</html>
